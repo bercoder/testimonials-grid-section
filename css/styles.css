@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+    --moderate-violet-color: hsl(263, 55%, 52%);
+    --dark-grayish-blue-color: hsl(217, 19%, 35%);
+    --dark-blackish-blue-color: hsl(219, 29%, 14%);
+    --white-color: hsl(0, 0%, 100%);
+    --light-gray-color: hsl(0, 0%, 81%);
+    --light-grayish-blue-color: hsl(210, 46%, 95%);
+    --quote-color: #A775F1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html{
+    font-size: 62.5%
+}
+
+body{
+    height: 100vh;
+    background-color: var(--light-grayish-blue-color);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.container{
+    height: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 30px;
+    align-items: center;
+}
+
+main{
+    display: grid;
+    grid-template: 
+        "card1"
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card4"
+        "card5"
+        "card5";
+    gap: 25px;
+    min-width: 320px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.card{
+    padding: 30px;
+    border-radius: 10px;
+    color: var(--white-color)
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px
+}
+
+.card-header .card-header--name{
+    font-size: 1.5rem
+}
+.card-header p + p{
+    opacity: .5;
+}
+
+.card-body strong{
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.6rem;
+}
+
+.card-body p{
+    margin-top: 20px;
+    line-height: 1.8rem;
+    opacity: .7;
+}
+
+.card-header img{
+    border-radius: 50%;
+    margin-right: 15px;
+    height: 40px;
+}
+
+.card1{
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-position: 90% 0;
+    background-repeat: no-repeat;
+}
+
+.card1 .card-header img,
+.card4 .card-header img{
+    border: 2px solid var(--quote-color)
+}
+
+.card2 .card-header img{
+    border: 2px solid var(--light-grayish-blue-color)
+}
+
+.card1, .card2, .card4{
+    color: var(--light-gray-color);
+}
+
+.card1 strong, .card2 strong, .card4 strong{
+    color: var(--white-color);
+}
+
+.card1 .card-header, .card2 .card-header, .card4 .card-header{
+    color: var(--white-color);
+}
+
+.card1{
+    grid-area: card1;
+    background-color: var(--moderate-violet-color);
+}
+
+.card2{
+    grid-area: card2;
+    background: var(--dark-grayish-blue-color);
+}
+
+.card3{
+    grid-area: card3;
+    background: var(--white-color);
+    color: var(--dark-grayish-blue-color)
+}
+
+.card4{
+    grid-area: card4;
+    background: var(--dark-blackish-blue-color);
+}
+
+.card5{
+    grid-area: card5;
+    background: var(--white-color);
+    color: var(--dark-grayish-blue-color)
+}
+
+.attribution { 
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 11px; 
+    text-align: center; 
+    align-self: center;
+}
+
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 700px) {
+    main{
+        grid-template: 
+        "card1 card1"
+        "card2 card3"
+        "card4 card4"
+        "card5 card5";        
+    }
+}
+
+@media (min-width: 1100px) {
+    main{
+        grid-template: 
+        "card1 card1 card1 card2 card5"
+        "card3 card4 card4 card4 card5";
+    }
+
+    .card1{
+        background-position: 80% 0;
+    }
+}
